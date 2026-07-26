@@ -1,0 +1,47 @@
+# Azure RBAC Lab – Week 1 (Identity & Basics)
+
+This project demonstrates basic Azure identity and access management concepts as part of my **AZ‑104 study journey**.
+
+---
+
+## 🎯 Objectives
+- Create users and groups in Azure Active Directory.
+- Assign Role-Based Access Control (RBAC) roles to manage permissions.
+- Organize resources using subscriptions and resource groups.
+
+---
+
+## 🛠️ Scripts
+
+### 1. Create a User
+```bash
+az ad user create \
+  --display-name "LabUser1" \
+  --user-principal-name labuser1@yourtenant.onmicrosoft.com \
+  --password "StrongP@ssword123!"
+
+
+###2. Create a Group
+
+az ad group create \
+  --display-name "LabAdmins" \
+  --mail-nickname "labadmins"
+
+
+3. Assign RBAC Role
+
+az role assignment create \
+  --assignee labuser1@yourtenant.onmicrosoft.com \
+  --role "Contributor" \
+  --scope /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>
+
+
+Notes
+Azure AD is the identity service for Azure resources.
+
+RBAC ensures least privilege by assigning roles at different scopes (subscription, resource group, resource).
+
+Resource Groups help organize resources logically for management and billing
+
+Reflection
+This week I learned how RBAC enforces security boundaries in Azure. Creating users, groups, and assigning roles gave me hands‑on experience with identity management.
