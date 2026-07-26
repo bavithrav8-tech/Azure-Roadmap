@@ -32,3 +32,20 @@ az group create --name {name of your resource group} --location "{location}"
 Deployment group create (only works on latest version of CLI)-deploy resources under the resource group
 templateFile="{provide-the-path-to-the-template-file}"
 az deployment group create --name blanktemplate --resource-group myResourceGroup --template-file $templateFile
+
+Deploy the ARM template with an output(Azure powershell)
+$today=Get-Date -Format "MM-dd-yyyy"
+$deploymentName="addOutputs-"+"$today"
+New-AzResourceGroupDeployment -Name $deploymentName -TemplateFile $templateFile -storageName {your-unique-name} -storageSKU Standard_LRS
+
+
+Microsoft Entra ID
+-is part of the platform as a service (PaaS)
+-is a comprehensive solution for managing identities, enforcing access policies, and securing your applications and data in the cloud and on-premises
+-You can associate the same Microsoft Entra tenant with multiple Azure subscriptions. This allows you to use the same users, groups, and applications to manage resources across multiple Azure subscriptions.
+-A single Microsoft Entra tenant can support multiple Azure subscriptions.
+Microsoft Entra ID P1 and P2
+
+
+
+
