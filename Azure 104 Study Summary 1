@@ -1,0 +1,34 @@
+Azure Cloud Shell
+-is an interactive, authenticated, browser-accessible terminal for managing Azure resources
+-also provides cloud storage to persist files such as SSH keys, scripts, and more
+-manage Azure resources, including VMs, storage, and networking.
+
+ARM (Azure Resource manager)
+-ARM templates are JavaScript Object Notation (JSON) files that define the infrastructure and configuration for your deployment.
+Benefits 
+-ARM templates allow you to automate deployments and use the practice of infrastructure as code (IaC).you can store the IaC files in a 
+source repository and version it
+
+Resource Manager also has built-in validation. It checks the template before starting the deployment to make sure the deployment succeeds.
+
+Resource Manager template(one template )
+           |
+           |
+        ___v______
+           |
+  Azure resouce manager 
+           |
+   resource provider
+
+Deploy an ARM template to Azure
+deploy in different ways 
+  Deploy a local template
+  Deploy a linked template
+  Deploy in a continuous deployment pipeline
+
+Resource group create commands (Azure CLI)
+az group create --name {name of your resource group} --location "{location}"
+
+Deployment group create (only works on latest version of CLI)-deploy resources under the resource group
+templateFile="{provide-the-path-to-the-template-file}"
+az deployment group create --name blanktemplate --resource-group myResourceGroup --template-file $templateFile
